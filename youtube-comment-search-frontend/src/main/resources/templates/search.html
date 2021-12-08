@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Youtube Popular Comment Search</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+    table tr:nth-of-type(3n) td {
+        border-bottom: 1px solid gray;
+    }
+    em {
+        background-color: yellow;
+    }
+    </style>
+</head>
+
+<a href="/">Go back</a>
+
+<body>
+<h3 th:text="'Finished running query: ' + ${query}" />
+<h3>Results: </h3>
+<table>
+    <span th:each="result, iStat: ${results}">
+        <tr>
+            <td><b>Rank: </b><text th:text="${iStat.index} + ${startRank} + 1" /></td>
+            <td><b>Score: </b><text th:text="${result.displayScore()}" /></td>
+            <td><b>Author: </b><text th:utext="${result.displayHighlightedUserName()}" /></td>
+            <td><b>Date: </b><text th:text="${result.displayDate()}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Likes: </b><text th:text="${result.displayLikes()}" /></td>
+            <td><b>Video Name: </b><text th:utext="${result.displayHighlightedVideoName()}" /></td>
+            <td><b>Channel Name: </b><text th:text="${result.displayChannelName()}" /></td>
+        </tr>
+        <tr>
+            <td colspan="4"><b>Comment: </b><text th:utext="${result.displayHighlightedComment()}" /></td>
+        </tr>
+    </span>
+</table>
+<a th:hidden="${startRank} - 10 < 0" th:href="@{/search(query=${query},author=${author},minDate=${minDate},minLikes=${minLikes},startRank=(${startRank} - 10))}">Prev</a>
+<a th:hidden="${resultSize} < 10" th:href="@{/search(query=${query},author=${author},minDate=${minDate},minLikes=${minLikes},startRank=${startRank} + 10)}">Next</a>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Youtube Popular Comment Search</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <h1>Youtube Popular Comment Search</h1>
+
+    <h3>Input a single query:</h3>
+    <form action="search" method="get _blank" target="_self">
+        <table>
+            <tr>
+                <td><label for="query">Query:</label></td>
+                <td><input type="text" id="query" name="query" value="despacito" size="50"/></td>
+            </tr>
+            <tr>
+                <td><label for="query">Author:</label></td>
+                <td><input type="text" id="author" name="author" size="20"/></td>
+            </tr>
+            <tr>
+                <td><label for="minDate">After:</label></td>
+                <td><input type="date" id="minDate" name="minDate" value="2019-01-01" min="2018-01-01" max="2022-01-01"></td>
+            </tr>
+            <tr>
+                <td><label for="minLikes">Min Likes:</label></td>
+                <td><input type="number" id="minLikes" name="minLikes" min="0" value="100"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value ="Run"/></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+
+</html>
