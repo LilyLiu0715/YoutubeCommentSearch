@@ -7,6 +7,8 @@ This project has two components (see design in final project report):
 * Youtube comment indexer, implemented as a Java Maven project.
 * Youtube comment search frontend, implemented as a Spring Boot project.
 
+Github repository link: <https://github.com/LilyLiu0715/YoutubeCommentSearch>
+
 ### Youtube Comment Indexer
 
 ```bash
