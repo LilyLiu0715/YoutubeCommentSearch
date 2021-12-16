@@ -49,10 +49,10 @@ public class YoutubeCommentESClient {
 
     // Elastic search related constants.
     private static final String INDEX_NAME = "yt-comment-index";
-    private static final String HOST_NAME = "ir-yt-comment.es.us-central1.gcp.cloud.es.io";
+    private static final String HOST_NAME = "ir-projects.es.us-central1.gcp.cloud.es.io";
     private static final int PORT_NUMBER = 9243;
     private static final String USER_NAME = "elastic";
-    private static final String PASSWORD = "M9CFbaZr6uOdWb9gk22FzgAy";
+    private static final String PASSWORD = "sYCAq2PuJqsEUyKH4EW7rMzS";
 
     private final ElasticsearchClient client;
 
